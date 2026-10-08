@@ -1,0 +1,65 @@
+0.5.0 - RELEASE
+- Diagnostic logging defaults OFF; existing saved preferences are retained.
+- Mark all four firing-audio enable switches experimental.
+- Keep README, credits, validation and changelog outside the install ZIP.
+- Owner reports the 0.5 build works and is ready for release.
+
+HEAVY LASPISTOL AUDIO / ORIGINAL BEAM FIX
+- Add opt-in direct-shot volume control for Accatran Mk II and Kantrael Mk X
+  Heavy Laspistols, including hipfire and ADS. Default OFF; shared slider 10-100.
+- Add independent glow/trail switches for Original rifle and pistol beams.
+  Original retains its normal/critical beam and width; new switches default ON.
+- Skip targeted muzzle-flash actions before their initial particles spawn,
+  independently of beam style. Keep existing particle hook for other paths.
+- Preserve existing setting IDs/defaults, tabs and working rifle audio timing.
+- Extend bounded audio diagnostics (Audio 0.5), source integration and update tests.
+- Owner confirmed overall operation; no detailed per-weapon test matrix supplied.
+
+0.3.0-beta4 - HEAVY LASPISTOL / TAB TEST
+- Add dedicated Accatran Mk II and Kantrael Mk X Heavy Laspistol beam controls.
+- Suppress their muzzle-particle emission, including the Mk X critical muzzle.
+- Remove pistol linger/critical beam trails in Thin mode; retain a visible beam.
+- Organize options into Lasgun visuals, Laspistol visuals, Firing audio, Diagnostics.
+- Support Alf's optional curated tabs while retaining ordinary DMF groups.
+- Preserve existing settings and beta3 rifle audio behavior.
+- Pistol glare and actual tab rendering still require in-game validation.
+
+0.3.0-beta3 - HELBORE TIMING HOTFIX
+- Remove beta2's reset to full source volume at the start of the next charge.
+- Restore beta1 shot-lifetime behavior, retaining gain across overlapping shots.
+- Keep beta2's clearer sliders and optional diagnostic logging (Audio beta3).
+- Add a regression test for next-charge timing for all 6 Helbore shot variants.
+- Shared-source charge audio can briefly inherit shot gain; audible retest needed.
+
+0.3.0-beta2 - DIAGNOSTIC TEST
+- Explain direct sound gain and approximate dB reduction in slider tooltips.
+- Retain beta1 gain mapping; no perceptual curve change.
+- Add opt-out, bounded logs for gains, shot playback and restoration reasons.
+- Restore shared-source shot gain before charging/other weapon loops start.
+- Infantry/Helbore native audible response still requires testing.
+
+0.3.0-beta1 - FOR IN-GAME TESTING
+- Added opt-in Infantry and Helbore shot-volume controls (normal/charged).
+- Retain lower source gain while overlapping shots play; restore on completion,
+  unrelated source events, source removal, settings changes, disable and unload.
+- Existing Recon control and visual behavior preserved.
+- New Infantry/Helbore behavior has automated coverage; in-game result unverified.
+
+0.2.0
+- Added optional volume reduction for the local Recon sustained firing loop,
+  retaining its original sound. No extra audio mod or recordings required.
+- Clear enable-switch and dependent-slider labels; original defaults retained.
+- Preserved settings from test builds and existing VFX behavior.
+- Fixed DMF localization formatting and removed temporary diagnostic logging.
+- Owner confirmed audio reduction in test2 with the control enabled.
+
+0.1.1 - 2026-09-30
+- Preserve the working 0.1.0 hook logic; runtime edits are comments only.
+- Clarify teammate/shared-asset scope and the difference between width and brightness.
+- Add credits, AI-assistance disclosure and installation/update/uninstall guidance.
+- Expand tests to the actual DMF hook module, including delayed class loading,
+  disabled startup, re-enabling, cooperative chaining and unloading.
+- Preserve all 0.1.0 setting IDs, defaults and intended visual behavior.
+
+0.1.0 - 2026-09-30
+- Initial Thin/Off/Original rifle beam modes and independent particle controls.

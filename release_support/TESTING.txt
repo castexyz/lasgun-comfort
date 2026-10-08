@@ -1,0 +1,63 @@
+Development requires Python/Lupa; the installed mod does not.
+Use the pinned full game source in reference_manifest.json (all 11 weapons required).
+Run tests/test_mod.py --game-source <game source> --dmf-hooks <hooks.lua>.
+Run tests/test_audio.py, tests/test_shots.py and tests/test_muzzle.py with
+--game-source <game source>.
+Run tests/test_menu.py --references <reference_beta4 directory>
+--baseline-mod-root <0.3.0-beta4 mod>.
+The menu test needs dmf_options.lua, alf_load_dmf.lua, alf_main.lua and
+alf_mod_tabs.lua; see pinned commits/paths in reference_manifest.json.
+Repeat all five suites with --runtime luajit21 (default runtime is lua51).
+Engine/UI/audio primitives are mocked; these tests cannot prove native output.
+Run build_release.py; complete README's in-game checks before publication.
+
+Repository checks (Python 3 standard library, no downloaded references needed):
+python release_support/tests/test_repository.py
+python scripts/check_commit_privacy.py
+python release_support/build_release.py
+Run these commands from the repository root.
+The five feature suites additionally require Lupa (validated with 2.8).
+Use a Lupa build matching your Python interpreter version.
+Third-party reference scripts and historical baseline mod files must be supplied
+separately; they are deliberately not committed in this repository.
+
+LOCAL COMMIT PRIVACY
+
+This repository uses an explicit file allowlist in `.gitignore`. New files are
+ignored until reviewed and added to that allowlist. Do not force-add logs,
+screenshots, credentials, game source, dependencies or generated archives.
+
+After cloning, enable the local commit guard from the repository root:
+
+    git config --local core.hooksPath .githooks
+    git config --local user.useConfigOnly true
+
+Set `user.name` to your public GitHub handle and `user.email` to the exact
+GitHub noreply address from your GitHub email settings. Local setup leaves
+both unset explicitly so a personal global identity cannot leak into commits.
+Run `python scripts/check_commit_privacy.py` to check the staged snapshot.
+The hook requires Python 3 and checks both author and committer email at commit.
+It scans all indexed files, including force-added files, without printing
+matched secret values. It cannot guarantee detection of every possible secret
+or prevent deliberate hook bypasses. Recheck before any push.
+
+
+DIAGNOSTIC DETAILS
+Audio logs use the prefix "Audio 0.5:". Each settings batch has a limit of
+120 lines plus its limit notice; changing a setting starts a new batch.
+Logs report matched shots, gain calls, playback timing and restoration. A
+successful native call does not prove that the audible output changed.
+Individual-shot gain restores after tracked shots end, before other non-shot
+events routed through the hook, on settings changes, source removal, disable
+and unload. Starting the next Helbore charge does not restore gain early.
+If a native API fails, the original firing events continue.
+
+IN-GAME REGRESSION CHECKS
+1. Test Kantrael Mk X hipfire and ADS, especially critical shots. Keep Original
+   selected and toggle muzzle suppression. Test glow suppression separately,
+   then repeat for a rifle.
+2. Test both Heavy Laspistols with audio ON at 100, 50 and 10. Compare hipfire
+   and ADS, OFF versus ON, reloads and weapon switches. Release and fire again
+   after changing settings. Recheck Helbore and Recon audio.
+3. Check all four settings sections with Alf tabs enabled and disabled, plus
+   retained settings after restarting the game.

@@ -1,0 +1,54 @@
+{
+  "game_source_commit": "419fe18d414a618ce0474bd015bab470afb446d6",
+  "dmf_hooks_url": "https://raw.githubusercontent.com/Darktide-Mod-Framework/Darktide-Mod-Framework/master/dmf/scripts/mods/dmf/modules/core/hooks.lua",
+  "retrieved": "2026-09-30",
+  "sha256": {
+    "dmf_hooks.lua": "8f6439700ac6c6af9bce003122317bc37263509e061d7d67eb842d06e130da09",
+    "scripts/settings/effects/player_line_effects.lua": "f3a9edcbdea5446597d940a101bb4cd535b9a1afbae69869426977c51eb8bef1",
+    "scripts/extension_systems/fx/player_unit_fx_extension.lua": "ff80674f828faa2e667b2d30c48d83ca058bbbfbe54a18b026639820cda94069",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p1_m1.lua": "098e420d50dd66f2d776592550841b403226a6d504aeeda5160b0b1f8e1688a8",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p1_m2.lua": "9da106d208b0663961a0f3865c9de4faa42f7ad2ee63cfe13912073b9949e0ef",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p1_m3.lua": "a183682475263bd8fd590b3ddcff88c43cdd4031fd2640ad3bfee5f4eadbb623",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p2_m1.lua": "238e74eb1e2383da6a1e075e3d8a95653c0a00be1197dbadb4f3a003a700eeea",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p2_m2.lua": "bf0d1fa730fe6d8de1b10d71cdcddc6d124faa0185d794324a688b63fa507bd6",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p2_m3.lua": "dc679620b56bb38fd1bdba500a4365d8ce5f5375a978dcc1cd35ad2d58a4dcd7",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p3_m1.lua": "b2d3197608ac00092adbf67953456ab18f5d3eea272e3aa4e4826e949f15846d",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p3_m2.lua": "b4431ff49ae099e04ed60464923b78abfb9b668631f418a060a08d9f018f587f",
+    "scripts/settings/equipment/weapon_templates/lasguns/lasgun_p3_m3.lua": "262d6c76895d0e7a7382ef241e52056e01cb65a1cb06f48bc13cced46049c262"
+  },
+  "beta4": {
+    "retrieved": "2026-10-01",
+    "game_source_commit": "419fe18d414a618ce0474bd015bab470afb446d6",
+    "dmf_commit": "fc08c1cb772f86248c7ae9e957543e801a0dbf64",
+    "alf_commit": "c1f861d62427f16a6661cad29c2aa80ef47d8280",
+    "alf_version": "2.0.7",
+    "references": {
+      "dmf_options": "dmf/scripts/mods/dmf/modules/core/options.lua",
+      "alf_load_dmf": "Alfs_DMF_Extensions/scripts/mods/Alfs_DMF_Extensions/modules/load_dmf.lua",
+      "alf_main": "Alfs_DMF_Extensions/scripts/mods/Alfs_DMF_Extensions/Alfs_DMF_Extensions.lua",
+      "alf_mod_tabs": "Alfs_DMF_Extensions/scripts/mods/Alfs_DMF_Extensions/modules/mod_tabs.lua"
+    },
+    "sources": [
+      "https://github.com/Aussiemon/Darktide-Source-Code/blob/419fe18d414a618ce0474bd015bab470afb446d6/scripts/settings/equipment/weapon_templates/laspistols/laspistol_p1_m3.lua",
+      "https://www.nexusmods.com/warhammer40kdarktide/mods/864?tab=description"
+    ],
+    "sha256": {
+      "alf_load_dmf.lua": "f166816ca79fa582ef9a16e879c5b9629865b2d01c8339cc1b56a709bf2a6c1b",
+      "alf_main.lua": "62a4eb57ffad5e3c10d1aeee8df2ce6f6b11d447759e5e0848e525d755dbcccb",
+      "alf_mod_tabs.lua": "6677c6380a86a9ae9049273390612dabb1d67a2aae8b9dd8406ab8c38cf20435",
+      "dmf_options.lua": "a874e2b13d8db44f541832999acafdaa278411682ec0d39739a742ab4614dbbe",
+      "laspistol_p1_m1.lua": "2b04748ce7d1e8017cf93bf30080bbc0150541a4902adf649611e6d9ebab8fb6",
+      "laspistol_p1_m3.lua": "b54ac0275361a70cea5ad192ab2bb7c6d12c645fed5ad88c677e63e9faa3d64e",
+      "player_line_effects.lua": "39dcbe860d8fd81d11eff876cf508446de80d790ddb16a36baad47efcfcf6d3c"
+    }
+  },
+  "release_0_5": {
+    "checked": "2026-10-01",
+    "baseline": "0.3.0-beta4",
+    "game_source_commit": "419fe18d414a618ce0474bd015bab470afb446d6",
+    "sha256": {
+      "scripts/settings/sound/player_character_sound_event_aliases.lua": "fd6efd051100c64b36148ecb97b4ae671ce63296d477dfecdc5d5a8be45ce1ea",
+      "scripts/extension_systems/weapon/actions/action_shoot.lua": "079465269ad3014b8fb25174b0c3b75de52523a17c08ed302fdccfb66206b4f7"
+    }
+  }
+}

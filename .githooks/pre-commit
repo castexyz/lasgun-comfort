@@ -1,0 +1,3 @@
+#!/bin/sh
+# Fail closed if Python is unavailable or the privacy check fails.
+exec python scripts/check_commit_privacy.py --check-identity

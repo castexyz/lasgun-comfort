@@ -1,0 +1,75 @@
+Lasgun Comfort 0.5.0
+
+IN-GAME STATUS
+Owner reports previous Helbore audio is working. Previous Recon attenuation
+and Veteran rifle visuals were tested in the Psykhanium. Version 0.5 Heavy
+Laspistol audio, pre-spawn muzzle suppression, independent Original glow/trail
+controls: owner reports 0.5 is working and ready for release. This is an overall
+confirmation; a per-weapon/mode test matrix was not supplied. Native menu
+rendering after the final labels/default change remains unverified.
+
+REFERENCES
+Game scripts: 419fe18d414a618ce0474bd015bab470afb446d6
+DMF core options: fc08c1cb772f86248c7ae9e957543e801a0dbf64
+Alf 2.0.7: c1f861d62427f16a6661cad29c2aa80ef47d8280
+Both Heavy Laspistol hipfire/ADS templates use ranged_single_shot. Accatran
+resolves to play_weapon_laspistol; Kantrael resolves to play_laspistol_p1_m3.
+Tails and critical cues use exclusive events outside the matched shot path.
+No third-party modules, game scripts or game assets ship in the ZIP.
+
+AUTOMATED CHECKS - LUA 5.1 / LUAJIT 2.1
+All five feature suites passed in both runtimes (10 successful suite runs).
+Final release cleanup reran mod, shot and menu suites in both runtimes (6 passed),
+including default-OFF logging, explicit opt-in, experimental labels, saved
+logging preference retention and DMF/Alf setup.
+- All shipped Lua parses; localization format strings and entry point checked.
+- 56 cases execute the actual game beam renderer, with engine primitives mocked:
+  4 rifle / 3 pistol templates, normal/critical, Thin/Off/Original, and Original
+  with glow suppression OFF. Preserve beam resources/width/link/sound and shared
+  template immutability. All flash switches checked across all three beam modes.
+- 264 cases per runtime execute the actual muzzle action with FX tables from
+  all 11 weapons, both firing modes, normal/critical, partial/full charge and
+  all beam modes. Suppression ON creates no muzzle particle or size-variable
+  write; OFF/disabled retains the native result. Unknown/mixed FX pass through.
+- Existing rifle/charge/impact assets and all 3 pistol muzzle assets covered.
+- Actual DMF hook module checks deferred classes, disabled startup, cooperative
+  chaining, re-enable and unload, including the new ActionShoot hook.
+- 11 shot gear-dispatch paths, both pistol aliases at 100/50/10 and OFF,
+  overlapping pistol playback, reload restoration, remote/husk/resim exclusions.
+  Existing shot cleanup, API failure, argument/return and Helbore next-charge
+  regressions retained. Original Recon loop integration and lifecycle passed.
+- Native DMF option initialization preserves all previous saved setting schemas
+  and values. Only the diagnostic default changes to OFF; saved values remain.
+  Four new settings get defaults. Optional Alf allocation/inheritance
+  still produces four ordered tabs; LuaJIT also tests widget-tab injection.
+  Native UI layout/audio/rendering primitives are mocked, not tested in-game.
+- Install ZIP: exact 5 files, CRC integrity and byte equality with source.
+
+REVIEW / LIMITS
+New pistol audio uses the existing dry-source gain mechanism. No global audio
+settings are changed. Other sounds overlapping on the same weapon source can
+briefly inherit reduced gain. Reverb and separate tails/extras are not separately
+controlled. Native gain failures retain original firing events; failed cleanup
+can require disabling the control and restarting the game.
+Muzzle pre-spawn suppression targets exact energy-weapon resources; mixed FX
+with casings or a secondary muzzle retain the original method and use the
+existing World particle hook. Other particle paths can leave initial bursts or
+embedded lights. Original beam shaders themselves can remain bright.
+New glow controls affect matching teammates' locally rendered beams too; shared
+laser impacts remain shared. No extra runtime dependency. Existing rifle gain
+curve and the beta3 Helbore next-charge fix are retained. Credits and AI disclosure
+kept in the separate documentation folder. Multiplayer and mod combinations
+remain unverified. Owner confirms overall in-game operation.
+No dedicated security review was requested or performed.
+
+GITHUB REPOSITORY PREPARATION - 2026-10-08
+The mod source is unchanged. Five feature suites passed again under Lua 5.1
+and LuaJIT 2.1 after relocation (10 runs). Repository privacy/index/identity
+and ZIP enforcement tests passed. All 22 indexed text files were reviewed;
+no configured sensitive-data patterns or known personal identifiers found.
+Security review for this preparation covered the file allowlist, staged-index
+scanner, local hook, commit identity and packaging boundaries, not a new audit
+of the unchanged game mod. No inherited Git history, credentials or remote.
+Screenshots, logs, downloaded references and build outputs are excluded.
+Pattern scanning and local hooks cannot guarantee complete secret detection
+or prevent deliberate bypasses. No new in-game tests were performed.

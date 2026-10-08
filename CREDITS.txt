@@ -1,0 +1,68 @@
+CREDITS AND AI DISCLOSURE
+
+tdopz - VFX Swapper
+https://www.nexusmods.com/warhammer40kdarktide/mods/678
+https://github.com/tdopz/DT-mods/tree/main/vfx_swapper
+The supplied VFX Swapper 1.3 was the starting reference for this project.
+Its effect-selection and particle-emission suppression approach informed
+Lasgun Comfort's muzzle, charge and impact controls.
+
+leerH - original VFX Limiter
+VFX Swapper credits leerH for creating the original vfx_limiter. This project
+also acknowledges that work as the source of the limiter approach it studied.
+
+Darktide Mod Framework contributors
+https://github.com/Darktide-Mod-Framework/Darktide-Mod-Framework
+For the framework, cooperative hook system, options menu and documentation
+that make this mod possible. DMF is a required dependency, not bundled here.
+
+Aussiemon and contributors - Darktide Source Code reference
+https://github.com/Aussiemon/Darktide-Source-Code
+For maintaining the decompiled script reference used to check the game's
+beam renderer, weapon templates and particle resource names.
+
+Fatshark
+For Warhammer 40,000: Darktide and its existing visual effects. This mod refers
+to assets already supplied by the game; it does not distribute game assets.
+
+Related work: Wobin - Polychromatic
+https://www.nexusmods.com/warhammer40kdarktide/mods/1346
+Reviewed as a separate option for actual color/brightness adjustment.
+No Polychromatic code, patched assets or native loader is included or required.
+
+AI assistance
+Developed with substantial assistance from OpenAI Codex (AI), including Lua
+implementation, code review, documentation and automated test development.
+The project owner directed the requirements and reported an in-game test with
+a Veteran lasgun in the Psykhanium. AI-generated code and mocked tests are not
+a substitute for in-game testing. See VALIDATION.txt for the specific coverage.
+
+These acknowledgements do not imply endorsement by the people listed above.
+This package is not a redistribution of VFX Swapper, VFX Limiter, DMF or
+Polychromatic. Credits do not grant permission to redistribute their files.
+
+0.2.0 audio research
+Autodesk Stingray WwiseWorld API documentation (source dry-level control):
+https://help.autodesk.com/cloudhelp/ENU/Stingray-Help/lua_ref/obj_stingray_WwiseWorld.html
+Aussiemon's Darktide source mirror: game loop/source lifecycle reference, commit
+419fe18d414a618ce0474bd015bab470afb446d6.
+PewPew Continued (Backup158 and original contributors) and SimpleAudio
+(deluxghost) were reviewed as alternatives; no code was copied from either.
+Original implementation, tests and documentation written with OpenAI Codex.
+No third-party mod code or game audio files are included in this release.
+
+0.3.0-beta4 menu integration
+Alfthebigheaded - Alf's DMF (Mod Settings) Extensions
+https://www.nexusmods.com/warhammer40kdarktide/mods/864
+https://github.com/ATCostello/darktide_dmf_improved
+For the optional curated-tab API and its author documentation. Upstream
+2.0.7 initialization/allocation code was used only as a development test
+reference. No Alf extension code or assets are included in this ZIP.
+Pistol effect coverage was checked against Aussiemon's source mirror.
+Implementation, tests and documentation developed with OpenAI Codex assistance.
+
+0.5.0 audio and visual fixes
+Aussiemon source reference: Heavy Laspistol shot aliases, separate tail routing
+and ActionShoot muzzle selection/lifecycle. Pre-spawn selection follows the
+game script behavior; game code and assets are not bundled.
+Implementation, review and automated tests developed with OpenAI Codex assistance.
